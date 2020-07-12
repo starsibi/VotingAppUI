@@ -1,17 +1,18 @@
 <h2 class>How was the azure function session</h2>
 <!-- Default inline 1-->
-<div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
+<h5 style="display: inline-block;padding-right: 5px;">Mode:  </h5>
+<div class="custom-control custom-radio custom-control-inline">    
+    <input type="radio" class="custom-control-input" (click)="radioButtonClick($event)" id="defaultInline1" name="inlineDefaultRadiosExample" value="QR">
     <label class="custom-control-label" for="defaultInline1">By QR-Code</label>
   </div>
   
   <!-- Default inline 2-->
   <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
+    <input type="radio" class="custom-control-input" id="defaultInline2" (click)="radioButtonClick($event)"  [checked]="true" name="inlineDefaultRadiosExample" value="Button">
     <label class="custom-control-label" for="defaultInline2">By Button</label>
   </div>
   
-<div class="row">
+<div class="row" *ngIf= "buttonMode">
     <div class="col-md-4">
         <div class="card  text-center">
             <div class="card-body">
@@ -40,7 +41,7 @@
 </div>
 
 
-<div class="row">
+<div class="row"  *ngIf= "!buttonMode">
     <div class="col-md-4">
         <div class="card  text-center">
             <img class="card-img-top" src="../../assets/Images/Intresting.png" alt="Intresting">
